@@ -1,8 +1,6 @@
+/* eslint-disable global-require */
+
 module.exports = {
-  parser: '@babel/eslint',
-  parserOptions: {
-    requireConfigFile: false,
-  },
   style: {
     postcss: {
       plugins: [
@@ -12,3 +10,5 @@ module.exports = {
     },
   },
 };
+
+/* eslint-enable global-require */
