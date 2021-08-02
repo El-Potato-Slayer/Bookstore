@@ -1,4 +1,4 @@
-/* eslint-disable global-require */
+/* eslint-disable */
 
 module.exports = {
   style: {
@@ -11,4 +11,4 @@ module.exports = {
   },
 };
 
-/* eslint-enable global-require */
+/* eslint-enable */

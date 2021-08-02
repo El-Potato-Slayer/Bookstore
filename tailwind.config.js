@@ -1,5 +1,6 @@
+/* eslint-disable */
 const colors = require('tailwindcss/colors');
-
+/* eslint-enable */
 module.exports = {
   purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
   presets: [],
