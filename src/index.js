@@ -6,9 +6,10 @@ import App from './components/App';
 
 import store from './store/configureStore';
 
-ReactDOM.render(
+const Root = () => (
   <Provider store={store}>
     <App />
-  </Provider>,
-  document.getElementById('root'),
+  </Provider>
 );
+
+ReactDOM.render(<Root />, document.getElementById('root'));

@@ -1,11 +1,11 @@
-import { BooksForm } from '../containers/BooksForm';
-import { BooksList } from '../containers/BooksList';
+import BooksForm from '../containers/BooksForm';
+import BooksList from '../containers/BooksList';
 
 function App() {
   return (
-    <div className="App">
-      <BooksList>d</BooksList>
-      <BooksForm>d</BooksForm>
+    <div className="flex flex-col">
+      <BooksList />
+      <BooksForm />
     </div>
   );
 }

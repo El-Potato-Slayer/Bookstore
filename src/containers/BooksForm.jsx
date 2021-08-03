@@ -1,10 +1,7 @@
-/* eslint-disable react/prefer-stateless-function */
-/* eslint-disable semi */
-/* eslint-disable no-unused-vars */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-export class BooksForm extends Component {
+class BooksForm extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
   };
@@ -35,6 +32,6 @@ export class BooksForm extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({});
+const mapStateToProps = () => ({});
 
 export default connect(mapStateToProps)(BooksForm);
