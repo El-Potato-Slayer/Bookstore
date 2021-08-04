@@ -2,19 +2,19 @@ import * as types from '../types';
 
 const initialState = [
   {
-    uniqueId: Date.now() + 1,
+    id: Date.now() + 1,
     title: 'book1',
-    categories: ['1', '2'],
+    category: 'Action',
   },
   {
-    uniqueId: Date.now() + 2,
+    id: Date.now() + 2,
     title: 'book2',
-    categories: ['1', '2'],
+    category: 'Biography',
   },
   {
-    uniqueId: Date.now() + 3,
+    id: Date.now() + 3,
     title: 'book3',
-    categories: ['1', '2'],
+    category: 'Horror',
   },
 ];
 

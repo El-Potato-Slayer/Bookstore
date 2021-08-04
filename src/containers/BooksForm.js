@@ -2,11 +2,19 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 class BooksForm extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      categories: ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Kids', 'Learning', 'Sci-Fi'],
+    };
+  }
+
   handleSubmit = (event) => {
     event.preventDefault();
   };
 
   render() {
+    const { categories } = this.state;
     return (
       <form onSubmit={this.handleSubmit}>
         <label htmlFor="title">
@@ -16,13 +24,13 @@ class BooksForm extends Component {
         <label htmlFor="categories">
           Categories
           <select name="categories" id="categories">
-            <option value="action">Action</option>
-            <option value="biography">Biography</option>
-            <option value="history">History</option>
-            <option value="horror">Horror</option>
-            <option value="kids">Kids</option>
-            <option value="learning">Learning</option>
-            <option value="scifi">Sci-Fi</option>
+            {
+              categories.map((category) => (
+                <option value={category} key={category}>
+                  {category}
+                </option>
+              ))
+            }
           </select>
         </label>
 
