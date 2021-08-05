@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import './index.css';
 import { createStore } from 'redux';
+import { uuid } from 'uuidv4';
 import App from './components/App';
 import rootReducer from './store/reducers';
-import uuid from 'uuidv4'
 
 const initialState = [
   {
