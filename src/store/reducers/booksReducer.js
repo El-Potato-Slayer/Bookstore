@@ -1,29 +1,11 @@
-import * as types from '../types';
-
-const initialState = [
-  {
-    id: Date.now() + 1,
-    title: 'book1',
-    category: 'Action',
-  },
-  {
-    id: Date.now() + 2,
-    title: 'book2',
-    category: 'Biography',
-  },
-  {
-    id: Date.now() + 3,
-    title: 'book3',
-    category: 'Horror',
-  },
-];
-
+const CREATE_BOOK = 'CREATE_BOOK;';
+const REMOVE_BOOK = 'REMOVE_BOOK;';
 // eslint-disable-next-line import/prefer-default-export
-export const booksReducer = (state = initialState, { type, payload }) => {
+export const booksReducer = (state = [], { type, payload }) => {
   switch (type) {
-    case types.CREATE_BOOK:
+    case CREATE_BOOK:
       return [...state, payload.book];
-    case types.REMOVE_BOOK:
+    case REMOVE_BOOK:
       return { ...state, ...payload };
 
     default:
