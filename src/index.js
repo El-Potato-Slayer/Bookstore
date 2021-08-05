@@ -5,20 +5,21 @@ import './index.css';
 import { createStore } from 'redux';
 import App from './components/App';
 import rootReducer from './store/reducers';
+import uuid from 'uuidv4'
 
 const initialState = [
   {
-    id: Date.now() + 1,
+    id: uuid(),
     title: 'book1',
     category: 'Action',
   },
   {
-    id: Date.now() + 2,
+    id: uuid(),
     title: 'book2',
     category: 'Biography',
   },
   {
-    id: Date.now() + 3,
+    id: uuid(),
     title: 'book3',
     category: 'Horror',
   },
