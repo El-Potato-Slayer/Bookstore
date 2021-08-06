@@ -1,43 +1,46 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import { uuid } from 'uuidv4';
+import { createBook } from '../store/actions';
 
-class BooksForm extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      categories: ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Kids', 'Learning', 'Sci-Fi'],
-    };
-  }
+function BooksForm() {
+  const categories = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Kids', 'Learning', 'Sci-Fi'];
+  const [book, setBook] = useState({ id: null, title: null, category: categories[0] });
 
-  handleSubmit = (event) => {
-    event.preventDefault();
+  const handleChange = (event) => {
+    setBook({ ...book, [event.target.name]: event.target.value });
   };
 
-  render() {
-    const { categories } = this.state;
-    return (
-      <form onSubmit={this.handleSubmit}>
-        <label htmlFor="title">
-          Title
-          <input type="text" name="title" id="title" />
-        </label>
-        <label htmlFor="categories">
-          Categories
-          <select name="categories" id="categories">
-            {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setBook({ id: uuid(), ...book });
+    createBook(book);
+    setBook({ id: null, title: null, category: categories[0] });
+    event.target.reset();
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <label htmlFor="title">
+        Title
+        <input type="text" name="title" id="title" onChange={handleChange} />
+      </label>
+      <label htmlFor="categories">
+        Categories
+        <select name="category" id="category" onChange={handleChange}>
+          {
               categories.map((category) => (
                 <option value={category} key={category}>
                   {category}
                 </option>
               ))
             }
-          </select>
-        </label>
+        </select>
+      </label>
 
-        <input type="submit" value="Submit" />
-      </form>
-    );
-  }
+      <input type="submit" value="Submit" />
+    </form>
+  );
 }
 
 const mapStateToProps = () => ({});

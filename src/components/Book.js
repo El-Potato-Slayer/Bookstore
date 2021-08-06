@@ -3,19 +3,17 @@ import PropTypes from 'prop-types';
 
 function Book({ book }) {
   return (
-    <table>
-      <tr>
-        <td>
-          {book.id}
-        </td>
-        <td>
-          {book.title}
-        </td>
-        <td>
-          {book.category}
-        </td>
-      </tr>
-    </table>
+    <>
+      <td>
+        {book.id}
+      </td>
+      <td>
+        {book.title}
+      </td>
+      <td>
+        {book.category}
+      </td>
+    </>
   );
 }
 
