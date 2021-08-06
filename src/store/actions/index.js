@@ -10,6 +10,11 @@ export const removeBook = (book) => ({
   book,
 });
 
+export const changeFilter = (category) => ({
+  type: 'CHANGE_FILTER',
+  category,
+});
+
 createBook.propTypes = {
   book: PropTypes.shape({
     id: PropTypes.string,
