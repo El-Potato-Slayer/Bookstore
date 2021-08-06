@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { connect } from 'react-redux';
+import { connect, useDispatch } from 'react-redux';
 import { uuid } from 'uuidv4';
 import { createBook } from '../store/actions';
 
 function BooksForm() {
   const categories = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Kids', 'Learning', 'Sci-Fi'];
-  const [book, setBook] = useState({ id: null, title: null, category: categories[0] });
+  const [book, setBook] = useState({ id: uuid(), title: null, category: categories[0] });
+  const dispatch = useDispatch();
 
   const handleChange = (event) => {
     setBook({ ...book, [event.target.name]: event.target.value });
@@ -13,8 +14,7 @@ function BooksForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setBook({ id: uuid(), ...book });
-    createBook(book);
+    dispatch(createBook(book));
     setBook({ id: null, title: null, category: categories[0] });
     event.target.reset();
   };
