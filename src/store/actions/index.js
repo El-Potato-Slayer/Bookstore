@@ -1,14 +1,18 @@
 import PropTypes from 'prop-types';
-import * as types from '../types';
 
 export const createBook = (book) => ({
-  type: types.CREATE_BOOK,
+  type: 'CREATE_BOOK',
   book,
 });
 
 export const removeBook = (book) => ({
-  type: types.CREATE_BOOK,
+  type: 'REMOVE_BOOK',
   book,
+});
+
+export const changeFilter = (category) => ({
+  type: 'CHANGE_FILTER',
+  category,
 });
 
 createBook.propTypes = {
