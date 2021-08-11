@@ -28,18 +28,16 @@ function BooksList(props) {
   };
 
   return (
-    <>
+    <div>
       <CategoryFilter handleFilter={handleFilterChange} />
-      <table>
-        {
-          filteredBooks().map((book) => (
-            <tr key={book.id}>
-              <Book key={book.id} book={book} removeBook={handleRemoveBook} />
-            </tr>
-          ))
-        }
+      <table className="w-11/12 m-auto">
+        {filteredBooks().map((book) => (
+          <tr key={book.id}>
+            <Book key={book.id} book={book} removeBook={handleRemoveBook} />
+          </tr>
+        ))}
       </table>
-    </>
+    </div>
   );
 }
 
