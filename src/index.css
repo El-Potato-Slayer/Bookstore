@@ -4,4 +4,24 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --white: #fff;
+  --azure: #0290ff;
+  --black-two: #121212;
+  --medium-blue: #307bbe;
+  --dodger-blue: #379cf6;
+}
+
+.Bookstore-CMS {
+  font-family: Montserrat;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--azure);
+}
+
+/* progress bar */
+
 /* stylelint-enable */

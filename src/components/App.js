@@ -1,9 +1,10 @@
 import BooksForm from '../containers/BooksForm';
 import BooksList from '../containers/BooksList';
+import '../index.css';
 
 function App() {
   return (
-    <div className="flex flex-col">
+    <div>
       <BooksList />
       <BooksForm />
     </div>
