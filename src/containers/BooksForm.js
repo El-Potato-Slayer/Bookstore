@@ -35,13 +35,28 @@ function BooksForm() {
   };
 
   return (
-    <div className="header flex justify-between items-center border">
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="title">
-          <input type="text" name="title" id="title" onChange={handleChange} />
+    <div className="flex flex-col border-t-4 mt-4 w-11/12 m-auto pt-8 mb-12">
+      <h2 className="text-gray-500 text-xl font-bold montserrat">
+        ADD NEW BOOK
+      </h2>
+      <form onSubmit={handleSubmit} className="flex">
+        <label htmlFor="title" className="w-7/12">
+          <input
+            placeholder="Book title"
+            type="text"
+            className="p-4 w-full"
+            name="title"
+            id="title"
+            onChange={handleChange}
+          />
         </label>
-        <label htmlFor="categories" className="CATEGORIES">
-          <select name="category" id="category" onChange={handleChange}>
+        <label htmlFor="categories" className="flex-1 mx-8">
+          <select
+            className="p-4 bg-white w-full"
+            name="category"
+            id="category"
+            onChange={handleChange}
+          >
             {categories.map((category) => (
               <option value={category} key={category}>
                 {category}
@@ -50,7 +65,7 @@ function BooksForm() {
           </select>
         </label>
 
-        <input type="submit" value="Submit" />
+        <input className="flex-1 bg_azure text-white robotoSlab" type="submit" value="ADD BOOK" />
       </form>
     </div>
   );
