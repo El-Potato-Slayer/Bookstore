@@ -1,9 +1,11 @@
 import BooksForm from '../containers/BooksForm';
 import BooksList from '../containers/BooksList';
+import Navbar from './Navbar';
 
 function App() {
   return (
-    <div className="flex flex-col">
+    <div className="bg-panel">
+      <Navbar />
       <BooksList />
       <BooksForm />
     </div>
