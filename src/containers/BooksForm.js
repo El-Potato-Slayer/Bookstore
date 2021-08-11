@@ -36,7 +36,7 @@ function BooksForm() {
 
   return (
     <div className="flex flex-col border-t-4 mt-4 w-11/12 m-auto pt-8 mb-12">
-      <h2 className="text-gray-500 text-xl font-bold montserrat">
+      <h2 className="text-gray-500 text-xl font-bold montserrat mb-6">
         ADD NEW BOOK
       </h2>
       <form onSubmit={handleSubmit} className="flex">
