@@ -15,7 +15,7 @@ function CategoryFilter({ handleFilter }) {
   ];
 
   return (
-    <div className="border flex items-center h-24 px-16">
+    <div className="flex items-center h-24 px-16 mb-8 bg-white">
       <h1 className="montserrat text-blue-500 text-2xl font-bold">
         Bookstore CMS
       </h1>
